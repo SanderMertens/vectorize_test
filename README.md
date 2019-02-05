@@ -43,7 +43,12 @@ kind are typically scattered across the heap.
 
 ## Benchmarks
 Here are the benchmarks as measured on a 15-inch 2018 Macbook with a 2.6Ghz 
-Intel i7, on MacOS 10.14.1.
+Intel i7, on MacOS 10.14.1. While I was testing, I used these compilation options
+to verify if code was being vectorized:
+
+```
+-Rpass=loop-vectorize -Rpass-missed=loop-vectorized -Rpass-analysis=loop-vectorize -fsave-optimization-record
+```
 
 The used compiler is clang:
 
