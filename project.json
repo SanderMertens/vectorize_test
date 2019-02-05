@@ -1,0 +1,12 @@
+{
+    "id": "vectorize_test",
+    "type": "application",
+    "value": {
+        "author": "Sander Mertens",
+        "description": "Test difference between vectorized & non-vectorized code",
+        "use": [ "bake.util" ]
+    },
+    "lang.c": {
+        "cflags": ["-ffast-math"]
+    }
+}
