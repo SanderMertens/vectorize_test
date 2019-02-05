@@ -1,7 +1,6 @@
 # vectorize_test
 This is a small test program that tests the performance difference between vectorized
-and non-vectorized code. When comparing the worst with the best case, the test can
-run as much as 40x faster.
+and non-vectorized code, for various storage scenario's (SoA, AoS, Heap blocks).
 
 ## Run the code
 This application requires the bake build system. To install bake, see:
