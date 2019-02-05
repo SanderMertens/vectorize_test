@@ -43,8 +43,19 @@ kind are typically scattered across the heap.
 
 ## Benchmarks
 Here are the benchmarks as measured on a 15-inch 2018 Macbook with a 2.6Ghz 
-Intel i7.
+Intel i7, on MacOS 10.14.1.
 
+The used compiler is clang:
+
+```
+$ clang --version
+Apple LLVM version 10.0.0 (clang-1000.10.44.4)
+Target: x86_64-apple-darwin18.2.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+```
+
+Benchmarks:
 ```
 -- Preparing data for 100000 entities
 -- Start benchmarks
