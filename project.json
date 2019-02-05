@@ -7,6 +7,6 @@
         "use": [ "bake.util" ]
     },
     "lang.c": {
-        "cflags": ["-ffast-math -Rpass=loop-vectorize -Rpass-missed=loop-vectorized -Rpass-analysis=loop-vectorize -fsave-optimization-record"]
+        "cflags": ["-ffast-math"]
     }
 }
