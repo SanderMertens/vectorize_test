@@ -64,92 +64,92 @@ Benchmarks:
 ```
 -- Preparing data for 100000 entities
 -- Start benchmarks
-Attributes in separate arrays, cold:       0.000825
-Attributes in separate arrays, warm:       0.000304
-Position attributes in struct, cold:       0.000790
-Position attributes in struct, warm:       0.000320
-Attributes in one struct, cold:            0.001730
-Attributes in one struct, warm:            0.000318
-Attributes in one alloc'd struct, cold:    0.005215
-Attributes in one alloc'd struct, warm:    0.000986
+Attributes in separate arrays, cold:       0.000488 (V)
+Attributes in separate arrays, warm:       0.000041 (V)
+Position attributes in struct, cold:       0.000515 (V)
+Position attributes in struct, warm:       0.000051 (V)
+Attributes in one struct, cold:            0.001522
+Attributes in one struct, warm:            0.000397
+Attributes in one alloc'd struct, cold:    0.005085
+Attributes in one alloc'd struct, warm:    0.000788
 -- Cleaning up data
 -- Benchmarks done
 
 -- Preparing data for 1000000 entities
 -- Start benchmarks
-Attributes in separate arrays, cold:       0.007096
-Attributes in separate arrays, warm:       0.002616
-Position attributes in struct, cold:       0.006967
-Position attributes in struct, warm:       0.002492
-Attributes in one struct, cold:            0.016007
-Attributes in one struct, warm:            0.003966
-Attributes in one alloc'd struct, cold:    0.045979
-Attributes in one alloc'd struct, warm:    0.008424
+Attributes in separate arrays, cold:       0.005154 (V)
+Attributes in separate arrays, warm:       0.000744 (V)
+Position attributes in struct, cold:       0.005031 (V)
+Position attributes in struct, warm:       0.000676 (V)
+Attributes in one struct, cold:            0.014226
+Attributes in one struct, warm:            0.003126
+Attributes in one alloc'd struct, cold:    0.047704
+Attributes in one alloc'd struct, warm:    0.007410
 -- Cleaning up data
 -- Benchmarks done
 
 -- Preparing data for 1000000 entities
 -- Start benchmarks
-Attributes in separate arrays, cold:       0.003259
-Attributes in separate arrays, warm:       0.002521
-Position attributes in struct, cold:       0.003120
-Position attributes in struct, warm:       0.002442
-Attributes in one struct, cold:            0.006148
-Attributes in one struct, warm:            0.003110
-Attributes in one alloc'd struct, cold:    0.045164
-Attributes in one alloc'd struct, warm:    0.008291
+Attributes in separate arrays, cold:       0.001332 (V)
+Attributes in separate arrays, warm:       0.000645 (V)
+Position attributes in struct, cold:       0.001396 (V)
+Position attributes in struct, warm:       0.000755 (V)
+Attributes in one struct, cold:            0.005490
+Attributes in one struct, warm:            0.002581
+Attributes in one alloc'd struct, cold:    0.045237
+Attributes in one alloc'd struct, warm:    0.006892
 -- Cleaning up data
 -- Benchmarks done
 
 -- Preparing data for 10000000 entities
 -- Start benchmarks
-Attributes in separate arrays, cold:       0.069618
-Attributes in separate arrays, warm:       0.024966
-Position attributes in struct, cold:       0.067765
-Position attributes in struct, warm:       0.024406
-Attributes in one struct, cold:            0.159106
-Attributes in one struct, warm:            0.035251
-Attributes in one alloc'd struct, cold:    0.466851
-Attributes in one alloc'd struct, warm:    0.102340
+Attributes in separate arrays, cold:       0.051307 (V)
+Attributes in separate arrays, warm:       0.006719 (V)
+Position attributes in struct, cold:       0.051314 (V)
+Position attributes in struct, warm:       0.007922 (V)
+Attributes in one struct, cold:            0.147165
+Attributes in one struct, warm:            0.026485
+Attributes in one alloc'd struct, cold:    0.453954
+Attributes in one alloc'd struct, warm:    0.079158
 -- Cleaning up data
 -- Benchmarks done
 
 -- Preparing data for 50000000 entities
 -- Start benchmarks
-Attributes in separate arrays, cold:       0.359707
-Attributes in separate arrays, warm:       0.137166
-Position attributes in struct, cold:       0.355077
-Position attributes in struct, warm:       0.135211
-Attributes in one struct, cold:            0.833434
-Attributes in one struct, warm:            0.184556
-Attributes in one alloc'd struct, cold:    2.738726
-Attributes in one alloc'd struct, warm:    0.780988
+Attributes in separate arrays, cold:       0.250698 (V)
+Attributes in separate arrays, warm:       0.034717 (V)
+Position attributes in struct, cold:       0.263129 (V)
+Position attributes in struct, warm:       0.049825 (V)
+Attributes in one struct, cold:            0.772695
+Attributes in one struct, warm:            0.169159
+Attributes in one alloc'd struct, cold:    2.792307
+Attributes in one alloc'd struct, warm:    3.565040
 -- Cleaning up data
 -- Benchmarks done
 
 -- Preparing data for 100000000 entities
 -- Start benchmarks
-Attributes in separate arrays, cold:       0.716531
-Attributes in separate arrays, warm:       0.272533
-Position attributes in struct, cold:       0.705356
-Position attributes in struct, warm:       0.268394
-Attributes in one struct, cold:            1.678093
-Attributes in one struct, warm:            0.365475
-Attributes in one alloc'd struct, cold:    7.647449
-Attributes in one alloc'd struct, warm:    10.089399
+Attributes in separate arrays, cold:       0.514042 (V)
+Attributes in separate arrays, warm:       0.092840 (V)
+Position attributes in struct, cold:       0.596283 (V)
+Position attributes in struct, warm:       0.108926 (V)
+Attributes in one struct, cold:            1.678798
+Attributes in one struct, warm:            0.374491
+Attributes in one alloc'd struct, cold:    6.911441
+Attributes in one alloc'd struct, warm:    10.208863
 -- Cleaning up data
 -- Benchmarks done
 
 -- Preparing data for 200000000 entities
 -- Start benchmarks
-Attributes in separate arrays, cold:       1.453424
-Attributes in separate arrays, warm:       0.546632
-Position attributes in struct, cold:       1.424962
-Position attributes in struct, warm:       0.537129
-Attributes in one struct, cold:            4.488125
-Attributes in one struct, warm:            6.447619
-Attributes in one alloc'd struct, cold:    15.015039
-Attributes in one alloc'd struct, warm:    22.875200
+Attributes in separate arrays, cold:       1.064743 (V)
+Attributes in separate arrays, warm:       0.194111 (V)
+Position attributes in struct, cold:       1.069347 (V)
+Position attributes in struct, warm:       0.197115 (V)
+Attributes in one struct, cold:            4.501781
+Attributes in one struct, warm:            6.131327
+Attributes in one alloc'd struct, cold:    15.995863
+Attributes in one alloc'd struct, warm:    23.364604
 -- Cleaning up data
 -- Benchmarks done
 ```
