@@ -27,33 +27,40 @@ typedef struct Entity {
  * already in the cache.
  */
 void benchmark(int count) {
+    struct timespec start;
+
     printf("\n-- Preparing data for %d entities\n", count);
 
     /* Each attribute its own array */
+    timespec_gettime(&start);
     float *x = malloc(count * sizeof(float));
     float *y = malloc(count * sizeof(float));
     float *s = malloc(count * sizeof(float));
-
     float *x_novec = malloc(count * sizeof(float));
     float *y_novec = malloc(count * sizeof(float));
     float *s_novec = malloc(count * sizeof(float));
+    printf("SoA allocation time = %f\n", timespec_measure(&start));
 
 
     /* Store Position and Speed in separate arrays */
+    timespec_gettime(&start);
     Position *positions = malloc(count * sizeof(Position));
     Speed *speeds = malloc(count * sizeof(Speed));
-
     Position *positions_novec = malloc(count * sizeof(Position));
     Speed *speeds_novec = malloc(count * sizeof(Speed));
+    printf("SoA component allocation time = %f\n", timespec_measure(&start));
 
     /* Store entity structs in array */
+    timespec_gettime(&start);
     Entity *entities = malloc(count * sizeof(Entity));
     Entity *entities_novec = malloc(count * sizeof(Entity));
+    printf("AoS allocation time = %f\n", timespec_measure(&start));
 
     /* Store entities in separate blocks on the heap */
     Entity **entity_ptrs = malloc(count * sizeof(Entity*));
     void **garbage_ptrs = malloc(count * sizeof(void*));
     
+    timespec_gettime(&start);
     for (int i = 0; i < count; i ++) {
         entity_ptrs[i] = malloc(sizeof(Entity));
 
@@ -65,11 +72,9 @@ void benchmark(int count) {
          * entities.*/
         garbage_ptrs[i] = malloc(64); 
     }
-
-    struct timespec start;
+    printf("Heap allocation time ~ %f\n", timespec_measure(&start));
 
     printf("-- Start benchmarks\n");
-
 
 
     /* -- SoA (attributes) -- */
