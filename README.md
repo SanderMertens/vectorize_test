@@ -22,14 +22,14 @@ Each test is ran twice, to show the difference between a "cold" and "warm" test.
 The second time the test is ran, data is already in the CPU cache, and as a
 result, the test runs significantly faster.
 
-### Attributes in separate arrays (AoS)
+### Attributes in separate arrays (SoA)
 In this scenario, each attribute (`x`, `y`, `speed`) is in its own separate array.
 
-### Position attributes in same struct (AoS, components)
+### Position attributes in same struct (SoA, components)
 In this scenario, the `x` and `y` attributes are in a `Position` struct. The
 `Position` struct and `speed` data are in separate arrays.
 
-### All attributes in the same struct (SoA)
+### All attributes in the same struct (AoS)
 In this scenario the `x`, `y` and `speed` data are all in an `Entity` struct. To
 mimic actual OOP-style applications, this struct also has additional members
 which are not evaluated by the test. All entities are stored in the same array.
