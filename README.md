@@ -33,7 +33,7 @@ In this scenario the `x`, `y` and `speed` data are all in an `Entity` struct. To
 mimic actual OOP-style applications, this struct also has additional members
 which are not evaluated by the test. All entities are stored in the same array.
 
-### All attributes in the same struct, each entity its on heap alloc
+### All attributes in the same struct, each entity its own heap alloc
 This scenario uses the same `Entity` struct, but instead of storing all entities
 in the same array, all entities are allocated separately on the heap. To mimic
 actual applications, small chunks of "garbage" data is allocated inbetween the
