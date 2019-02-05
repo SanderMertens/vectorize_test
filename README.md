@@ -8,7 +8,7 @@ https://github.com/SanderMertens/bake
 
 After bake is installed, do:
 ```
-bake clone SanderMertens/vectorize_test
+bake clone SanderMertens/vectorize_test --cfg release
 bake run vectorize_test --cfg release
 ```
 
