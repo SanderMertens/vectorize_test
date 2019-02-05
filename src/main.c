@@ -69,7 +69,7 @@ void benchmark(int count) {
         x[i] += s[i];
         y[i] += s[i];
     }
-    printf("Attributes in separate arrays, cold:       %f (V)\n", timespec_measure(&start));
+    printf("   SoA, cold:                    %f (V)\n", timespec_measure(&start));
 
     timespec_gettime(&start);
 #pragma clang loop vectorize(enable)
@@ -77,7 +77,7 @@ void benchmark(int count) {
         x[i] += s[i];
         y[i] += s[i];
     }
-    printf("Attributes in separate arrays, warm:       %f (V)\n", timespec_measure(&start));
+    printf("   SoA, warm:                    %f (V)\n", timespec_measure(&start));
 
 
     /* -- Position in a separate struct */
@@ -87,7 +87,7 @@ void benchmark(int count) {
         positions[i].x += speeds[i];
         positions[i].y += speeds[i];
     }
-    printf("Position attributes in struct, cold:       %f (V)\n", timespec_measure(&start));
+    printf("   SoA (components), cold:       %f (V)\n", timespec_measure(&start));
 
     timespec_gettime(&start);
 #pragma clang loop vectorize(enable)
@@ -95,7 +95,7 @@ void benchmark(int count) {
         positions[i].x += speeds[i];
         positions[i].y += speeds[i];
     }
-    printf("Position attributes in struct, warm:       %f (V)\n", timespec_measure(&start));
+    printf("   SoA (components), warm:       %f (V)\n", timespec_measure(&start));
 
 
     /* -- All attributes in one Entity struct (contains also other, unused data) */
@@ -105,7 +105,7 @@ void benchmark(int count) {
         entities[i].p.x += entities[i].s;
         entities[i].p.y += entities[i].s;
     }
-    printf("Attributes in one struct, cold:            %f\n", timespec_measure(&start));
+    printf("   AoS, cold:                    %f\n", timespec_measure(&start));
 
     timespec_gettime(&start);
 #pragma clang loop vectorize(disable)
@@ -113,7 +113,7 @@ void benchmark(int count) {
         entities[i].p.x += entities[i].s;
         entities[i].p.y += entities[i].s;
     }
-    printf("Attributes in one struct, warm:            %f\n", timespec_measure(&start));
+    printf("   AoS, warm:                    %f\n", timespec_measure(&start));
 
 
     /* -- All attributes in one Entity struct, each separately allocated on heap */
@@ -124,7 +124,7 @@ void benchmark(int count) {
         e->p.x += e->s;
         e->p.y += e->s;
     }
-    printf("Attributes in one alloc'd struct, cold:    %f\n", timespec_measure(&start));
+    printf("   Heap blocks, cold:            %f\n", timespec_measure(&start));
 
     timespec_gettime(&start);
 #pragma clang loop vectorize(disable)
@@ -133,7 +133,7 @@ void benchmark(int count) {
         e->p.x += e->s;
         e->p.y += e->s;
     }
-    printf("Attributes in one alloc'd struct, warm:    %f\n", timespec_measure(&start));
+    printf("   Heap blocks, warm:            %f\n", timespec_measure(&start));
 
 
     printf("-- Cleaning up data\n");

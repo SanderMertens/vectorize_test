@@ -22,14 +22,14 @@ Each test is ran twice, to show the difference between a "cold" and "warm" test.
 The second time the test is ran, data is already in the CPU cache, and as a
 result, the test runs significantly faster.
 
-### Attributes in separate arrays
+### Attributes in separate arrays (AoS)
 In this scenario, each attribute (`x`, `y`, `speed`) is in its own separate array.
 
-### Position attributes in same struct
+### Position attributes in same struct (AoS, components)
 In this scenario, the `x` and `y` attributes are in a `Position` struct. The
 `Position` struct and `speed` data are in separate arrays.
 
-### All attributes in the same struct
+### All attributes in the same struct (SoA)
 In this scenario the `x`, `y` and `speed` data are all in an `Entity` struct. To
 mimic actual OOP-style applications, this struct also has additional members
 which are not evaluated by the test. All entities are stored in the same array.
@@ -67,92 +67,92 @@ InstalledDir: /Library/Developer/CommandLineTools/usr/bin
 ```
 -- Preparing data for 100000 entities
 -- Start benchmarks
-Attributes in separate arrays, cold:       0.000488 (V)
-Attributes in separate arrays, warm:       0.000041 (V)
-Position attributes in struct, cold:       0.000515 (V)
-Position attributes in struct, warm:       0.000051 (V)
-Attributes in one struct, cold:            0.001522
-Attributes in one struct, warm:            0.000397
-Attributes in one alloc'd struct, cold:    0.005085
-Attributes in one alloc'd struct, warm:    0.000788
+   SoA, cold:                    0.000510 (V)
+   SoA, warm:                    0.000040 (V)
+   SoA (components), cold:       0.000487 (V)
+   SoA (components), warm:       0.000045 (V)
+   AoS, cold:                    0.001398
+   AoS, warm:                    0.000184
+   Heap blocks, cold:            0.004395
+   Heap blocks, warm:            0.000671
 -- Cleaning up data
 -- Benchmarks done
 
 -- Preparing data for 1000000 entities
 -- Start benchmarks
-Attributes in separate arrays, cold:       0.005154 (V)
-Attributes in separate arrays, warm:       0.000744 (V)
-Position attributes in struct, cold:       0.005031 (V)
-Position attributes in struct, warm:       0.000676 (V)
-Attributes in one struct, cold:            0.014226
-Attributes in one struct, warm:            0.003126
-Attributes in one alloc'd struct, cold:    0.047704
-Attributes in one alloc'd struct, warm:    0.007410
+   SoA, cold:                    0.004850 (V)
+   SoA, warm:                    0.000676 (V)
+   SoA (components), cold:       0.004836 (V)
+   SoA (components), warm:       0.000766 (V)
+   AoS, cold:                    0.015199
+   AoS, warm:                    0.002706
+   Heap blocks, cold:            0.046170
+   Heap blocks, warm:            0.008975
 -- Cleaning up data
 -- Benchmarks done
 
 -- Preparing data for 1000000 entities
 -- Start benchmarks
-Attributes in separate arrays, cold:       0.001332 (V)
-Attributes in separate arrays, warm:       0.000645 (V)
-Position attributes in struct, cold:       0.001396 (V)
-Position attributes in struct, warm:       0.000755 (V)
-Attributes in one struct, cold:            0.005490
-Attributes in one struct, warm:            0.002581
-Attributes in one alloc'd struct, cold:    0.045237
-Attributes in one alloc'd struct, warm:    0.006892
+   SoA, cold:                    0.001515 (V)
+   SoA, warm:                    0.000642 (V)
+   SoA (components), cold:       0.001702 (V)
+   SoA (components), warm:       0.000866 (V)
+   AoS, cold:                    0.005363
+   AoS, warm:                    0.002759
+   Heap blocks, cold:            0.047522
+   Heap blocks, warm:            0.008795
 -- Cleaning up data
 -- Benchmarks done
 
 -- Preparing data for 10000000 entities
 -- Start benchmarks
-Attributes in separate arrays, cold:       0.051307 (V)
-Attributes in separate arrays, warm:       0.006719 (V)
-Position attributes in struct, cold:       0.051314 (V)
-Position attributes in struct, warm:       0.007922 (V)
-Attributes in one struct, cold:            0.147165
-Attributes in one struct, warm:            0.026485
-Attributes in one alloc'd struct, cold:    0.453954
-Attributes in one alloc'd struct, warm:    0.079158
+   SoA, cold:                    0.050321 (V)
+   SoA, warm:                    0.008190 (V)
+   SoA (components), cold:       0.052929 (V)
+   SoA (components), warm:       0.008695 (V)
+   AoS, cold:                    0.149097
+   AoS, warm:                    0.030550
+   Heap blocks, cold:            0.476867
+   Heap blocks, warm:            0.104416
 -- Cleaning up data
 -- Benchmarks done
 
 -- Preparing data for 50000000 entities
 -- Start benchmarks
-Attributes in separate arrays, cold:       0.250698 (V)
-Attributes in separate arrays, warm:       0.034717 (V)
-Position attributes in struct, cold:       0.263129 (V)
-Position attributes in struct, warm:       0.049825 (V)
-Attributes in one struct, cold:            0.772695
-Attributes in one struct, warm:            0.169159
-Attributes in one alloc'd struct, cold:    2.792307
-Attributes in one alloc'd struct, warm:    3.565040
+   SoA, cold:                    0.261631 (V)
+   SoA, warm:                    0.047819 (V)
+   SoA (components), cold:       0.272194 (V)
+   SoA (components), warm:       0.049514 (V)
+   AoS, cold:                    0.779598
+   AoS, warm:                    0.170067
+   Heap blocks, cold:            3.181558
+   Heap blocks, warm:            4.502359
 -- Cleaning up data
 -- Benchmarks done
 
 -- Preparing data for 100000000 entities
 -- Start benchmarks
-Attributes in separate arrays, cold:       0.514042 (V)
-Attributes in separate arrays, warm:       0.092840 (V)
-Position attributes in struct, cold:       0.596283 (V)
-Position attributes in struct, warm:       0.108926 (V)
-Attributes in one struct, cold:            1.678798
-Attributes in one struct, warm:            0.374491
-Attributes in one alloc'd struct, cold:    6.911441
-Attributes in one alloc'd struct, warm:    10.208863
+   SoA, cold:                    0.536632 (V)
+   SoA, warm:                    0.095812 (V)
+   SoA (components), cold:       0.532833 (V)
+   SoA (components), warm:       0.104858 (V)
+   AoS, cold:                    1.996591
+   AoS, warm:                    1.958505
+   Heap blocks, cold:            8.642156
+   Heap blocks, warm:            10.046488
 -- Cleaning up data
 -- Benchmarks done
 
 -- Preparing data for 200000000 entities
 -- Start benchmarks
-Attributes in separate arrays, cold:       1.064743 (V)
-Attributes in separate arrays, warm:       0.194111 (V)
-Position attributes in struct, cold:       1.069347 (V)
-Position attributes in struct, warm:       0.197115 (V)
-Attributes in one struct, cold:            4.501781
-Attributes in one struct, warm:            6.131327
-Attributes in one alloc'd struct, cold:    15.995863
-Attributes in one alloc'd struct, warm:    23.364604
+   SoA, cold:                    1.042337 (V)
+   SoA, warm:                    0.192516 (V)
+   SoA (components), cold:       1.091144 (V)
+   SoA (components), warm:       0.203515 (V)
+   AoS, cold:                    4.620915
+   AoS, warm:                    6.190330
+   Heap blocks, cold:            16.328733
+   Heap blocks, warm:            23.154768
 -- Cleaning up data
 -- Benchmarks done
 ```
