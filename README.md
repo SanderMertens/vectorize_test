@@ -60,7 +60,10 @@ Thread model: posix
 InstalledDir: /Library/Developer/CommandLineTools/usr/bin
 ```
 
-Benchmarks:
+### Graph (10 million entities):
+![benchmarks](images/benchmark.png)
+
+### Raw numbers:
 ```
 -- Preparing data for 100000 entities
 -- Start benchmarks
